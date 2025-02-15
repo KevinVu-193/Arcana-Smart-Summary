@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcana AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+
+<body class="headerStartPage">
+    
+   
+        <img src="ArcanaLogo.png" height="600" width="600">
+
+    <header>
+        <h1>Arcana</h1>
+        <h2>AI notetaking</h2>
+    </header>
+
+    <div style="height: 5px; width: 100%; background-color: #dc3d4b; margin: 0;"> </div>
+
+
+
+    <!-- Sidenav -->
+    <div id="Sidenavbar" class="sidenav"> 
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="CSI3344.html">Distributed Systems</a></li>
+                <li><a href="CSP3341.html">Programming Languages and Paradigms</a></li>
+                <li><a href="CSI3106.html">Software Architectures and Design</a></li>
+                <li><a href="CSI3105.html">Software Testing</a></li>
+                <li><a href ="aboutMe.html"> About Me</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Button to open sidenav -->
+    <div>
+        <h3>
+            View subjects
+        </h3>    
+    </div>
+
+    
+    <span onclick="openNav()" class="sidenavSymbol sidenavSymbolHover">&#9931;</span>
+
+    
+
+    <!-- need a tab for weeks/modules. -->
+    <div> 
+
+
+    </div>
+
+
+
+    <div class="textComparison">
+    <!-- gonna add a scrollable txt document here -->
+        <div>
+            <h2>Lecture Notes</h2>
+
+            <div class="scroll-box">
+
+                <p>
+                Logic programming paradigms 
+                </p>
+
+                <p>
+                It can be termed as abstract model of computation. It would solve logical problems like puzzles, series etc. In logic programming we have a knowledge base which we know before and along with the question and knowledge base which is given to machine, it produces result. In normal programming languages, such concept of knowledge base is not available but while using the concept of artificial intelligence, machine learning we have some models like Perception model which is using the same mechanism. 
+                In logical programming the main emphasize is on knowledge base and the problem. The execution of the program is very much like proof of mathematical statement, e.g., Prolog
+                </p>
+
+                <p>
+                this was written poorly. can you elaobrate and summarise 
+                </p>      
+
+            </div>
+        </div>
+
+     <!-- gonna add a scrollable txt document here next to the first one. -->
+     
+        <div>
+            <h2>Smart Summary</h2>
+            <div class="scroll-box">
+                
+
+                <p>  
+                    Explanation 
+                </p>
+
+                <p>
+                    The Logic Programming Paradigm is a programming approach that is fundamentally different from imperative and procedural paradigms. Instead of focusing on step-by-step execution, logic programming is based on formal logic and inference to derive solutions to problems. It is often considered an abstract model of computation because it does not specify a sequence of operations but rather defines relationships and constraints.
+                </p>
+
+                <p> 
+                How It Works
+                </p>
+
+                <p>
+                Knowledge Base (Facts & Rules) – Logic programming relies on a predefined set of facts and rules that describe relationships in a problem domain.
+                Query Execution (Inference Mechanism) – A question (query) is provided to the system, which then applies logical inference to derive the answer using the knowledge base.
+                Declarative Nature – Instead of specifying how to solve a problem, logic programming focuses on what the problem is by defining relationships and constraints.
+                Example:
+                Consider a simple Prolog (a logic programming language) knowledge base: 
+                </p>
+
+                <p>parent(john, mary).</p>
+                
+                <p>parent(mary, alice).</p>    
+                grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
+
+                <p> 
+                    ?- grandparent(john, alice).
+                </p>
+
+                <p> 
+                The system infers the answer using the predefined facts and rules.
+                </p>
+
+                <p>
+                Applications of Logic Programming
+                Artificial Intelligence & Machine Learning – AI models, like perceptrons in neural networks, use logic-based approaches for decision-making.
+                Expert Systems – Used in medical diagnosis, automated reasoning, and legal advisory systems.
+                Automated Theorem Proving – Used in mathematics and formal verification of software/hardware.
+                Natural Language Processing (NLP) – Logic-based techniques help in parsing and understanding human language.
+                </p>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    
+
+    </div>
+
+
+
+
+    <div>
+        <main>
+            <div>
+                <h2>About</h2>
+                <p>This is a personal project to see how current Artificial Intelligence frameworks such as DeepSeek and ChatGPT are able to digest and summarise learning material.</p>
+                <p>I also wanted to test other AI models to see if they could perform at the same level as ChatGPT-4</p>
+                <p>I'm also broke and can't afford the chatGPT api.</p>
+                
+            </div>
+
+
+
+        
+            
+            
+
+            <div> 
+                <h2> Code </h2>
+                    <div class ="code-container">
+                        <pre><code> 
+                            from pypdf import PdfReader
+                            import subprocess
+                            from fpdf import FPDF
+
+
+                            # Read the PDF file and extract the text
+                            reader = PdfReader("DS/Week1/Week 1.pdf")
+                            number_of_pages = len(reader.pages)
+                            all_text = ""
+
+                            # Iterate through each page, extract the text, and add it to all_text
+                            for i in range(number_of_pages):
+                                page = reader.pages[i]
+                                text = page.extract_text()
+                                if text:
+                                    all_text += text + "\n"
+
+                            # Show extracted text (optional)
+                            print("\nExtracted Text:\n")
+                            print(all_text)
+
+                            # Prepare the AI prompt
+                            prompt = f"""
+                            Summarize the following content. Include headings and bullet points where necessary:
+
+                            {all_text}
+                            """
+
+                            # Run DeepSeek locally using Ollama CLI
+                            ollama_path = r"C:\Users\kevin\AppData\Local\Programs\Ollama\ollama.exe"
+                            model_name = "llama3.2:latest"
+
+                            result = subprocess.run(
+                                [ollama_path, "run", model_name],
+                                input=prompt,
+                                capture_output=True,
+                                text=True,
+                                encoding="utf-8"
+                            )
+
+                            # Extract AI response
+                            ai_response = result.stdout
+
+                            # Print the AI response
+                            print("\nAI Response:\n")
+                            print(ai_response)
+
+                            # Create PDF
+                            pdf = FPDF()
+                            pdf.add_page()
+
+                            # Set font for title
+                            pdf.set_font("Arial", "B", 16)
+                            pdf.cell(200, 10, "Week 1 Summary", ln=True, align="C")
+
+                            # Set font for content
+                            pdf.set_font("Arial", size=11)
+                            pdf.ln(10)  # Add space before content
+
+                            # Use multi_cell for multi-line text
+                            pdf.multi_cell(0, 8, ai_response)
+
+                            # Save PDF file
+                            pdf.output("Week 1 Summary.pdf")
+
+                        </code></pre>
+                    </div>
+        </div>
+
+
+
+        
+
+        <div>
+            <h2> Resources </h2>
+                <h3> Installing Models Locally</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pbCQnDDj-bo?si=ZrSZU6-kkUMwNFyz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+                <h3> Ollama : Language Models </h3>
+                <a href="https://ollama.com">
+                    <img src="Ollama.png" height="200" width="200">
+                </a>
+            </div>
+        
+
+    </main>
+</div>
+
+
+    <!-- JavaScript functions -->
+    <script>
+        // Open the sidenav
+        function openNav() {
+            document.getElementById("Sidenavbar").style.width = "250px";
+        }
+
+        // Close the sidenav
+        function closeNav() {
+            document.getElementById("Sidenavbar").style.width = "0";
+        }
+    </script>
+</body>
+</html>

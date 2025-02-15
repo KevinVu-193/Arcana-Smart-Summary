@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    background-color: white;
+    color: #0F1923;
+    text-align: center;
+    font-family: "Bebas Neue", serif;
+    letter-spacing: 1px;
+}
+
+.headerStartPage
+{
+    animation: fadeIn 2s ease-in forwards;
+}
+
+h1, h2, h3, h4 {
+    color: white;
+    text-align: center;
+    font-family: "Bebas Neue", serif;
+    
+}
+
+h1 {
+    font-size: 6em;
+    color: #f94555; 
+    margin-bottom: -25px;
+    text-align: center;
+ 
+}
+
+h2 {
+    font-size: 2em;
+    letter-spacing: 1px;
+    color: #0F1923;
+
+}
+
+h3, h4 {
+    font-size: 1em;
+    letter-spacing: 1px;
+    color: #0F1923;
+}
+
+.logo 
+{
+    display: flex;
+    justify-content: center;
+    align-items: bottom;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+.code-container {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+.code-container pre {
+    text-align: left; /* Keeps the text aligned inside the box */
+    background-color: #f4f4f4; /* Optional: gives a background */
+    padding: 5px;
+    border-radius: 10px;
+    width: fit-content;
+    max-width: 80%;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}   
+
+.logoTransition {
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+
+/* page scroll bar stuff */ 
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 9999px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #dc3d4b;
+  }
+
+
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 50px;
+    overflow: hidden;
+    font-family: "Bebas Neue", serif;
+    text-align: center;
+}
+
+li {
+    display: inline;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.spotifyDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 2em;
+}
+
+
+.pdfDisplay{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 1em;
+}
+
+
+
+.resumeDisplay 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(153, 153, 153);
+    margin: 10px;
+    padding: 10px;
+}
+
+.aboutMe {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: top;
+        margin: 10px;
+        padding: 10px;   
+        border-radius: 10px;
+
+}
+
+.sidenavSymbol{
+    font-size: 40px;
+    color: #dc3d4b;
+}
+
+.sidenavSymbolHover {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sidenavSymbolHover:hover {
+    display: inline-block;
+    color: #111;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+/* Hover effect for links */
+.sidenav a:hover {
+    color: #dc3d4b;
+}
+
+/* Close button */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content */
+#main {
+    transition: margin-left 0.5s;
+    padding: 20px;
+}
+
+/* Responsive styling for smaller screens */
+@media screen and (max-height: 450px) {
+    .sidenav { padding-top: 15px; }
+    .sidenav a { font-size: 18px; }
+}
+
+
+
+.scroll-box {
+    flex-grow: 1;
+    width: 500px;
+    height: 500px;
+
+    border-width: 2px;
+    border-style: solid;
+    border-left: #111;
+    border-right: #111;
+
+    margin: 20px; 
+    padding: 10px;
+    background-color: whitesmoke;
+    overflow-y: scroll;
+}
+
+/* scroll box for text and resume stuff */
+
+.scroll-box::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .scroll-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  .scroll-box::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 9999px;
+  }
+  
+  /* Handle on hover */
+  .scroll-box::-webkit-scrollbar-thumb:hover {
+    background: #dc3d4b;
+  }
+
+
+
+.textComparison {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: 10px;
+    padding: 15px;
+    gap:10px;
+}
+
+
+
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-self: center;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+
+
+/* Style the tab content */
+.tabcontent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed Systems - Kevin Vu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="headerStartPage">
+
+   
+        <img src="ArcanaLogo.png" height="600" width="600">
+
+
+        <header>
+                <h1>About Me</h1>
+                <h2 style = "opacity: 0;"> . </h2> 
+        </header> 
+
+ 
+   
+    <div style="height: 5px; background-color: #dc3d4b; margin: 0; "> </div>
+ 
+
+    <!-- Sidenav -->
+    <div id="Sidenavbar" class="sidenav"> 
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="CSI3344.html">Distributed Systems</a></li>
+                <li><a href="CSP3341.html">Programming Languages and Paradigms</a></li>
+                <li><a href="CSI3106.html">Software Architectures and Design</a></li>
+                <li><a href="CSI3105.html">Software Testing</a></li>
+                <li><a href ="aboutMe.html"> About Me</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Button to open sidenav -->
+    <span onclick="openNav()" class="sidenavSymbol sidenavSymbolHover">&#9931;</span>
+ 
+
+    <div class ="aboutMe">
+
+    <div>  
+        <div>
+            <h2> Get to know me!</h2>
+            <a> Currently a third year Software Engineering at Edith Cowan University. I'm currently trying to expand my knowledge with miscellaneous projects that match what im passionate about. Feel free to check out my resume and playlist to get to know me better! </a>
+        </div> 
+            
+
+        
+        <p> <b> My Day to Day listens </b> </p>
+        <div class="spotifyDisplay"> 
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5H4S9NPpSXohtXeAYewq9V?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+
+        <p> <b> Locked-in </b> </p>
+        <div class="spotifyDisplay"> 
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2r9ZI02m30qaD2GoVldMJO?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> 
+        </div>
+
+
+        <p> <b> Something Different </b> </p>
+        <div class="spotifyDisplay"> 
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2irzJfnkcrQbOl5tI4DNI5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+    </div>
+
+
+        <div class="resumeDisplay"> 
+            <embed src="KvResume2025.pdf#toolbar=0&navpanes=0&scrollbar=0 " width="800px" height="1600px" /> 
+        </div>
+
+
+    </div>
+
+
+    
+    
+    <!-- JavaScript functions -->
+    <script>
+        //side nav functions
+        //--------------------------------------------------------------------------------
+
+        // Open the sidenav
+        function openNav() {
+            document.getElementById("Sidenavbar").style.width = "250px";
+        }
+
+        // Close the sidenav
+        function closeNav() {
+            document.getElementById("Sidenavbar").style.width = "0";
+        }
+
+        //--------------------------------------------------------------------------------
+
+        
+
+        //toggable nav functions
+        //--------------------------------------------------------------------------------
+
+        window.onload = function() {
+        // Simulate a click on the Week 1 tab when the page loads
+        document.querySelector('.tablinks.active').click();
+        }
+
+        function openTab(evt, weekNumber) {
+        // Hide all tab content
+        var tabcontent = document.getElementsByClassName("tabcontent");
+        for (var i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Remove the "active" class from all tab links
+        var tablinks = document.getElementsByClassName("tablinks");
+        for (var i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the selected tab and mark it as active
+        document.getElementById(weekNumber).style.display = "flex"; // Use flex since you're using flex in CSS
+        evt.currentTarget.className += " active";
+        }
+
+    </script>
+
+</body>
+</html>
