@@ -1,0 +1,1 @@
+A personal project to see how i can utilise a localised deepseek/ai model to summarise and elaborate on complex or vague lecture material. Practicing coding such as HTML, JS and CSS and a little python. :) 
