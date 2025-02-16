@@ -57,12 +57,12 @@ h3, h4 {
 }
 
 .code-container pre {
-    text-align: left; /* Keeps the text aligned inside the box */
-    background-color: #f4f4f4; /* Optional: gives a background */
+    text-align: left; 
+    background-color: #f4f4f4;
     padding: 5px;
     border-radius: 10px;
     width: fit-content;
-    max-width: 80%;
+    max-width: 100%;
 }
 
 
