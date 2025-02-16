@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed Systems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="headerStartPage">
+
+
+        <div>
+                <h1>Distributed Systems</h1>
+        </div> 
+
+ 
+   
+    <div style="height: 5px; background-color: #dc3d4b; margin: 0;"> </div>
+
+
+    <!-- Sidenav -->
+    <div id="Sidenavbar" class="sidenav"> 
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="CSI3344.html">Distributed Systems</a></li>
+                <li><a href="CSP3341.html">Programming Languages and Paradigms</a></li>
+                <li><a href="CSI3106.html">Software Architectures and Design</a></li>
+                <li><a href="CSI3105.html">Software Testing</a></li>
+                <li><a href ="aboutMe.html"> About Me</a></li>
+
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Button to open sidenav -->
+    <span onclick="openNav()" class="sidenavSymbol sidenavSymbolHover">&#9931;</span>
+
+
+    <!-- start of toggleable tabs -->
+    <div> 
+
+        <div class ="tab"> 
+            <button class="tablinks active" onclick="openTab(event, 'Week1')">Week 1</button>
+            <button class="tablinks" onclick="openTab(event, 'Week2')">Week 2</button>
+            <button class="tablinks" onclick="openTab(event, 'Week3')">Week 3</button>
+            <button class="tablinks" onclick="openTab(event, 'Week4')">Week 4</button>
+            <button class="tablinks" onclick="openTab(event, 'Week5')">Week 5</button>
+            <button class="tablinks" onclick="openTab(event, 'Week6')">Week 6</button>
+            <button class="tablinks" onclick="openTab(event, 'Week7')">Week 7</button>
+            <button class="tablinks" onclick="openTab(event, 'Week8')">Week 8</button>
+            <button class="tablinks" onclick="openTab(event, 'Week9')">Week 9</button>
+            <button class="tablinks" onclick="openTab(event, 'Week10')">Week 10</button>
+            <button class="tablinks" onclick="openTab(event, 'Week11')">Week 11</button>
+            <button class="tablinks" onclick="openTab(event, 'Week12')">Week 12</button>
+        </div>
+
+    </div> 
+
+    <!-- this is where the text will be called after being pressed-->
+
+
+    <div id= "Week1" class="tabcontent">
+  
+        <div class = "textComparison">
+
+            <div>
+                <h2>Week 1</h2>
+                    <div class = "pdfDisplay">
+                        <embed src="DS\Week1\Week 1.pdf" width="600px" height="1600px" /> 
+                    </div>
+
+            </div>
+    
+     
+            <div>
+                <h2>Smart Summary </h2>
+                    <div class = "pdfDisplay">
+                        <embed src="DS\Week1\Week 1 Summary.pdf" width="600px" height="1600px" /> 
+                    </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id= "Week2" class="tabcontent">
+            <!-- gonna add a scrollable txt document here -->
+            <div class = "textComparison">
+                
+                <div>
+                    <h2>Week 2</h2>
+                        <div class="scroll-box">
+
+                            <p>
+                                this should show week 2 lecture notes.
+                            </p>   
+
+                    </div>
+                </div>
+        
+
+                <!-- gonna add a scrollable txt document here next to the first one. -->
+        
+                <div>
+                    <h2>ChatGPT Output</h2>
+                        <div class="scroll-box">
+                            <p>
+                                this should show week 2 chatgpt response.
+                            </p>
+
+                        </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+</div>
+
+    
+    
+<!-- end of tabs and content -->
+        
+
+    <!-- JavaScript functions -->
+    <script>
+        //side nav functions
+        //--------------------------------------------------------------------------------
+
+        // Open the sidenav
+        function openNav() {
+            document.getElementById("Sidenavbar").style.width = "250px";
+        }
+
+        // Close the sidenav
+        function closeNav() {
+            document.getElementById("Sidenavbar").style.width = "0";
+        }
+
+        //--------------------------------------------------------------------------------
+
+        
+
+        //toggable nav functions
+        //--------------------------------------------------------------------------------
+
+        window.onload = function() {
+        // Simulate a click on the Week 1 tab when the page loads
+        document.querySelector('.tablinks.active').click();
+        }
+
+        function openTab(evt, weekNumber) {
+        // Hide all tab content
+        var tabcontent = document.getElementsByClassName("tabcontent");
+        for (var i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Remove the "active" class from all tab links
+        var tablinks = document.getElementsByClassName("tablinks");
+        for (var i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the selected tab and mark it as active
+        document.getElementById(weekNumber).style.display = "flex"; // Use flex since you're using flex in CSS
+        evt.currentTarget.className += " active";
+        }
+
+    </script>
+
+</body>
+</html>
