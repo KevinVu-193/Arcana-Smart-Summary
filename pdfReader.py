@@ -55,7 +55,9 @@ pdf.cell(200, 10, "Week 1 Summary", ln=True, align="C")
 
 # Set font for content
 pdf.set_font("Arial", size=11)
-pdf.ln(10)  # Add space before content
+
+ # Add space before content
+pdf.ln(10) 
 
 # Use multi_cell for multi-line text
 pdf.multi_cell(0, 8, ai_response)
